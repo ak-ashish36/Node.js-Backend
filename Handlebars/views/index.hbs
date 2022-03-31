@@ -1,0 +1,27 @@
+<h1>Welcome to handle bars</h1>
+<h4>Hello {{props.name}}</h4>
+
+<div id="helpers" style="text-align: center;">
+    <h3>Example of Default helpers</h3>
+    {{!-- If else it only checks for true or false --}}
+    <h5>{{#if props.age}} Age is Given as props {{else}} Age is not Given{{/if}}</h5>
+
+    {{!-- Each - for Accessing all the val from props --}}
+    <ul class="list">
+        {{#each props}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    
+    {{!-- Accessing all key and values from props --}}
+    {{#each props}} {{@key}}: {{this}} {{/each}}
+</div>
+
+<div id="helpers" style="text-align: center;">
+    <h3>Example of Custom helpers</h3>
+    <h5>{{conf}}</h5>
+    <h5>{{multiple 2}}</h5>
+    <h5>{{ucase props.name}}</h5>
+    <h5>{{#check 2 6}} Value equals {{else}} value not equals {{/check}}</h5>
+</div>
+<a href="about">Click here to go to about page</a>

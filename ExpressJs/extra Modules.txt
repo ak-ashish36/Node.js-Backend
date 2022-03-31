@@ -1,0 +1,24 @@
+Some extra modules needed 
+
+1. npm i --save-dev nodemon        OR   npm i g-nodemon		(nodemon helps by automatically restarting the node application when file changes in the directory are detected.)
+"scripts": {	
+    "start" : "node index",
+    "dev" : "nodemon index"
+  }
+add in script in package.json file OR Use nodemon Directly from terminal
+Terminal : npm run dev             OR   nodemon index
+
+2. npm i body-parser  (this is used for getting the data from client ,example form data)
+					
+const bodyParser = require('body-parser')
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended:true}))
+
+app.post('/ ', (req,res)=>{			
+	name = req.body.name
+})
+
+3. npm i cors		//This is needed to avoid the error of cors policy when we fetch the request from server on client side because both sites are running on different ports
+const cors = require('cors');
+app.use(cors());
+
